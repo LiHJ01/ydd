@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" type="text/css"/>
+		<script src="js/jquery-1.12.0.js"></script>
+		<script src="js/jiu.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//第一页面
+				$(".box2").on("click",function(){
+					$(".er").css("display","block");
+					$(".box").css("display","none");
+					$(".san").css("display","none");
+				});
+				
+				//第二页面
+				var s = 3;
+				var arr = [0,7,7,1,7,7,2,7,7,7,7,3,7,7,7,4,7,7,7,7,5,7,7,6,7,7];
+				$(".jg_01 img").eq(8).on("click",function(){
+					var j = parseInt(Math.random()*27);
+					$(".cmeng").css("display","block");
+					if(s<=0){
+						$(".buz_02").css("display","block");
+						s=0;
+						clearInterval(jiu.time);
+					}else{
+						s--;
+						$(".sp1").html(s);
+						jiu(arr[j]);
+					}
+					
+				});
+				//号码轮播
+				var top = 0;
+			    clearInterval(time);
+				var time = setInterval(function(){
+					top+=1;
+					if($(".lun").position().top<=(-$(".lun").height()+$(".yf_02").height())){
+						$(".lun").css("top",0+"px");
+						top = 0;
+					}else{
+						$(".lun").css("top",-top+"px");
+					}
+				},50);
+				
+				$(".qd").on("click",function(){
+					$(".myx").css("display","none");
+				});
+				$(".qd_01").on("click",function(){
+				    $(".myx").css("display","none");
+				});
+				$(".qd_03").on("click",function(){
+				    $(".myx").css("display","none");
+				});
+				$(".sp2").on("click",function(){
+					$(".meng").css("display","block");
+				});
+				$(".kz").on("click",function(){
+					$(".meng").css("display","none");
+				});
+				
+				//我的奖品
+				var xm = /^[\u4e00-\u9fa5]/;
+				var ze = /^[1-3]\d{10}$/;
+				$(".box6").on("click",function(){
+					$(".jp").css("display","block");
+				});
+				//判断姓名跟手机号格式
+				$(".sj_01").on("click",function(){
+					if(xm.test($(".ip_01").val())==true && ze.test($(".ip_02").val())==true){
+						$(".san").css("display","block");
+						$(".box").css("display","none");
+						$(".er").css("display","none");
+						$(".jp").css("display","none");
+					}else{
+						if($(".ip_01").val()==""){
+							$(".hf_01").html("不能为空！");
+						}else{
+							if(xm.test($(".ip_01").val())==false){
+								$(".hf_01").html("格式不正确！");
+							}else{
+								$(".hf_01").html("");
+							}
+						}
+						if($(".ip_02").val()==""){
+							$(".hf_02").html("不能为空！");
+						}else{
+							if(ze.test($(".ip_02").val())==false){
+								$(".hf_02").html("格式不正确！");
+							}else{
+								$(".hf_02").html("");
+							}
+						}
+					}
+				});
+				$(".sj_02").on("click",function(){
+					$(".jp").css("display","none");
+				});
+				$(".spdh_02").on("click",function(){
+					$(".duih").css("display","none");
+				});
+				$(".spdh_01").on("click",function(){
+					if($(".ip_03").val()=="123456"){
+						$(".wenb_03").html("已兑换");
+						$(".duih").css("display","none");
+					}else{
+						$(".spdh_03").html("密码不正确");
+					}
+				});
+				$(".san_03").on("click",function(){
+					$(".er").css("display","block");
+					$(".box").css("display","none");
+					$(".san").css("display","none");
+				});
+				$(".wenb_03").on("click",function(){
+					$(".duih").css("display","block");
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box1"></div>
+			<div class="box2"></div>
+			<div class="box3"></div>
+		</div>
+		<div class="er">
+			<div class="box4">
+				<p class="cj">抽奖次数：<span class="sp1">3</span>次<span class="sp2">游戏规则</span></p>
+			</div>
+			<div class="box5">
+				<div class="jg_01">
+					<img src="img/sudoku_01.jpg" style="border: solid 4px #0000FF;"/>
+					<img src="img/sudoku_02.jpg"/>
+					<img src="img/sudoku_03.jpg"/>
+					<img src="img/sudoku_04.jpg"/>
+					<img src="img/sudoku_06.jpg"/>
+					<img src="img/sudoku_07.jpg"/>
+					<img src="img/sudoku_08.jpg"/>
+					<img src="img/sudoku_09.jpg"/>
+					<img src="img/sudoku_05.jpg"/>
+					<div class="cmeng"></div>
+				</div>
+			</div>
+			<div class="box6"></div>
+			<div class="box7">
+				<div class="yf">
+					<div class="yf_01">已发出的奖品：</div>
+					<div class="yf_02">
+						<div class="lun">
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>152****9545 获得S5健身俱乐部贵宾卡</p>
+							<p>138****9545 获得黄封村人参酒两瓶</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+							<p>137****9545 获得莱沃口腔储值卡</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="myx">
+			<div class="tank">
+				<p>提示</p>
+				<p style="color: red;">恭喜您，中奖了</p>
+				<p class="p_04"><img src="img/sudoku_01.jpg"/></p>
+				<p>中国联通流量卡</p>
+				<p>50元</p>
+				<p>兑换地址：长春市内联通营业厅登记统一存入</p>
+				<p>注:异地号码，非正常在用号码、已有相同流量包、融合套餐等不能使用</p>
+				<hr style="margin-top: 10px;"/>
+				<p  style="line-height: 140%;"><span class="qd">确定</span></p>
+			</div>
+			<div class="buz">
+			    <p>提示</p>
+				<p class="ig"><img src="img/sudoku_09.jpg"/></p>
+				<hr style="margin-top: 10px;"/>
+				<p><span class="qd_01">确定</span></p>
+			</div>
+			<div class="buz_02">
+			    <p>提示</p>
+				<p style="color: red;">资格已用完！</p>
+				<hr style="margin-top: 10px;"/>
+				<p><span class="qd_03">确定</span></p>
+			</div>
+		</div>
+	    <div class="san">
+	    	<div class="san_01">
+	    		<p class="sp2" style="margin-left: -2%;">游戏规则</p>
+	    	</div>
+	    	<div class="san_02">
+	    		<div class="wdjp">
+	    			<div class="jpx">我的奖品</div>
+	    			<div class="jpx_01">
+	    				<div class="wenb_01"><img src="img/cw.jpg"/></div>
+	    				<div class="wenb_02">
+	    					<p>奖品：黄封村人参酒两瓶</p>
+							<p>中奖时间：2017年1月19日12点12分</p>
+							<p>兑奖时间：截止到2017年2月26日</p>
+							<p>兑奖地址：吉林省酒文化博物馆（亚泰大街9699号）</p>
+							<p>联系电话：0431-88508899</p>
+	    				</div>
+	    				<div class="wenb_03">立即兑换</div>
+	    			</div>
+	    			<div class="jpx_01">
+	    				<div class="wenb_01"><img src="img/cw.jpg"/></div>
+	    				<div class="wenb_02">
+	    					<p>奖品：黄封村人参酒两瓶</p>
+							<p>中奖时间：2017年1月19日12点12分</p>
+							<p>兑奖时间：截止到2017年2月26日</p>
+							<p>兑奖地址：吉林省酒文化博物馆（亚泰大街9699号）</p>
+							<p>联系电话：0431-88508899</p>
+	    				</div>
+	    				<div class="wenb_03">立即兑换</div>
+	    			</div>
+	    			<div class="jpx_01">
+	    				<div class="wenb_01"><img src="img/cw.jpg"/></div>
+	    				<div class="wenb_02">
+	    					<p>奖品：黄封村人参酒两瓶</p>
+							<p>中奖时间：2017年1月19日12点12分</p>
+							<p>兑奖时间：截止到2017年2月26日</p>
+							<p>兑奖地址：吉林省酒文化博物馆（亚泰大街9699号）</p>
+							<p>联系电话：0431-88508899</p>
+	    				</div>
+	    				<div class="wenb_03">立即兑换</div>
+	    			</div>
+	    			<div class="jpx_01">
+	    				<div class="wenb_01"><img src="img/cw.jpg"/></div>
+	    				<div class="wenb_02">
+	    					<p>奖品：黄封村人参酒两瓶</p>
+							<p>中奖时间：2017年1月19日12点12分</p>
+							<p>兑奖时间：截止到2017年2月26日</p>
+							<p>兑奖地址：吉林省酒文化博物馆（亚泰大街9699号）</p>
+							<p>联系电话：0431-88508899</p>
+	    				</div>
+	    				<div class="wenb_03">立即兑换</div>
+	    			</div>
+	    		
+	    		</div>
+	    	</div>
+	    	<div class="san_03"></div>
+	    </div>
+	    <div class="meng">
+	        <div class="yxkz">
+	        	<div class="yxkz_01">
+	        	    <h3 style="text-align: center;">游戏规则</h3>
+					<p>1. 客户需要登录彩练客户端方可参加抽奖活动；</p>
+					<p>2. 每名客户每天抽奖有3次机会，点击转盘的【开始抽奖】按钮进行抽奖，转动结束停留的位置就是您获得的奖品；</p>
+					<p>3. 中奖后需填写姓名、电话，兑奖时根据您的填写的信息进行现场兑奖，具体奖项如下：</p>
+					<p>黄封村<a href="#">人参酒</a>两瓶：共100份，总价值12000元</p>
+					<p>莱沃<a href="#">口腔</a>储值卡：共50份，总价值10000元</p>
+					<p>中国联通<a href="#">流量卡</a>：共200份，总价值10000元</p>
+					<p>S5健身俱乐部<a href="#">贵宾卡</a>：共有80份，总价值8000元</p>
+					<p>圣雅瑜伽SPA会所储值卡：共3份，总价值6000元</p>
+					<p>陶进二胡工作室：共20份，总价值6000元</p>
+					<p>蛋壳科技VR体验卡：共50份，总价值2500元</p>
+					<p>4. 抽奖时间</p>
+					<p>2017年1月27日游戏时间：22：30~23：59：59</p>
+					<p>2017年1月28日~30日游戏时间：每天10：00~23：59：59</p>
+					<p>5. 各奖品兑奖方式及时间不同，具体如下：</p>
+					<p>1)	黄封村人参酒</p>
+					<p>兑奖时间：截止到2017年2月26日</p>
+					<p>兑奖地址：<a href="#">吉林省</a>酒文化博物馆（亚泰大街9699号）</p>
+					<p>联系电话：0431-88508899</p>
+					<p>2)	莱沃口腔储值卡</p>
+					<p>兑奖时间：截止到2017年12月31日</p>
+					<p>兑奖地址：工农大路1780号（<a href="#">省中医院东侧</a>)</p>
+					<p>联系电话：0431—89545888</p>
+					<p>注：洗牙4次（不限本人使用）；口腔<a href="#">体检</a>；</p>
+					<p>3)	中国联通流量卡</p>
+					<p>兑奖时间：截止到2017年3月31日</p>
+					<p>兑奖地址：<a href="#">长春市</a>内联通营业厅登记统一存入</p>
+					<p>联系电话：无</p>
+					<p>注：2G/3G用户500M流量；4G用户1G流量;异地号码，非正常在用号码、已有相同流量包、融合套餐等不能使用</p>
+					<p>4)	S5健身俱乐部贵宾卡</p>
+					<p>兑奖时间：截止到2017年4月30日</p>
+					<p>兑奖地址：</p>
+					<p>南关区幸福街与蔚山路交会处绿地中央广场<a href="#">盘古</a>家宴旁</p>
+					<p><a href="#">高新区</a>荷园路与华光街交会处东行50米安联国际</p>
+					<p><a href="#">绿园区</a>景阳大路与春城大街交会处北行150米</p>
+					<p>联系电话：</p>
+					<p>0431—81887555；</p>
+					<p>0431—80811555</p>
+					<p>0431—88006122</p>
+					<p>注：3店通用；单天无时间限制，器材限制使用</p>
+					<p>5)	圣雅瑜伽SPA会所储值卡</p>
+					<p>兑奖时间：截止到2017年7月1日</p>
+					<p>兑奖地址：飞跃东路林田创客公园D栋2楼彩练新闻</p>
+					<p>联系电话：13943017772</p>
+					<p>注：每人限用1张；不含服装、垫子等费用；</p>
+					<p>6)	陶进二胡工作室</p>
+					<p>兑奖时间：截止到2017年12月31日</p>
+					<p>兑奖地址：<a href="#">飞跃</a>东路林田创客公园D栋2楼彩练新闻</p>
+					<p>联系电话：13943017772</p>
+					<p>注：学习二胡免一次课时费；</p>
+					<p>7)	蛋壳科技VR体验卡</p>
+					<p>兑奖时间：截止到2017年7月1日</p>
+					<p>兑奖地址：</p>
+					<p>同志街与同光路交会处联通营业厅；</p>
+					<p>联通营业厅前进大街店；</p>
+					<p>联系电话：无</p>
+					<p>注意：VR互动实战体验一次</p>
+					<p>活动最终解释权归彩练新闻所有。</p>
+				</div>
+				<hr/>
+				<p class="yxkz_02"><span class="kz">确定</span></p>
+	        </div>
+        </div>
+	    <div class="jp">
+	    	<div class="jp_01">
+	    		<h2 style="text-align: center; font-weight: 400;">输入信息</h2>
+	    		<div class="zhong">
+	    			<p>姓名：</p>
+	    			<p><input type="text" placeholder="请输入你的真实姓名" class="ip_01"/></p>
+	    			<p class="hf hf_01"></p>
+	    			<p>手机号：</p>
+	    			<p><input type="text" placeholder="请输入你的手机号" class="ip_02"/></p>
+	    			<p class="hf hf_02"></p>
+	    		</div>
+	    		<div class="xia">
+	    			<span class="sj_01">确定</span>
+	    			<span class="sj_02">取消</span>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="duih">
+	    	<div class="duih_01">
+	    		<p style="font-size: 22px;">兑换密码</p>
+	    		<p><input type="password" class="ip_03"/></p>
+	    		<p class="spdh_03" style="color: red;"></p>
+	    		<p class="spdh"><span class="spdh_01">确定</span><span class="spdh_02">取消</span></p>
+	    	</div>
+	    </div>
+	</body>
+</html>
