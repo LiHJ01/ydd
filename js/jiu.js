@@ -29,13 +29,13 @@ function jiu(n){
 				   $(".myx").css("display","block");
 				   $(".buz").css("display","block");
 				   $(".tank").css("display","none");
-				   $(".buz_02").css("display","none");
+//				   $(".buz_02").css("display","none");
 				}else{
 				   $(".p_04 img")[0].src=$(".jg_01 img")[i].src;
 				   $(".myx").css("display","block");
 				   $(".tank").css("display","block");
 				   $(".buz").css("display","none");
-				   $(".buz_02").css("display","none");
+//				   $(".buz_02").css("display","none");
 				}
 				
 			}
