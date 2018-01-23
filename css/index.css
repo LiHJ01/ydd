@@ -425,23 +425,13 @@
 			.yxkz{
 				width: 75vw;
 				max-width: 530px;
-				height: 38vh;
+				height: 40vh;
 				background-color: white;
 				border-radius: 5px;
 				position: fixed;
 				top: 30%;
 				left: 12.5%;
 			}
-			/*@media only screen and (min-height: 105vh) and (max-height:200vh) {
-				.meng{
-					width: 100vw;
-					height: 200vh;
-					background: rgba(0,0,0,0.4);
-					position: fixed;
-					top: 0;
-					display: none;
-				}
-			}*/
             .yxkz_01{
             	width: 75vw;
 				max-width: 530px;
