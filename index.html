@@ -20,7 +20,7 @@
 				var s = 3;
 				var arr = [0,7,7,1,7,7,2,7,7,7,7,3,7,7,7,4,7,7,7,7,5,7,7,6,7,7,7,7,7,7];
 				$(".jg_01 img").eq(8).on("click",function(){
-					var j = parseInt(Math.random()*(arr.length+1));
+					var j = parseInt(Math.random()*(arr.length+1));	
 					if(s<=0){
 						$(".myx").css("display","block");
 						$(".buz_02").css("display","block");
@@ -28,10 +28,12 @@
 						$(".buz").css("display","none");
 						s=0;
 						clearInterval(jiu.time);
+						$(".cmeng").css("display","none");
 					}else{
 						s--;
 						$(".sp1").html(s);
 						jiu(arr[j]);
+						$(".cmeng").css("display","block");
 					}
 					
 				});
@@ -53,6 +55,7 @@
 				});
 				$(".qd_01").on("click",function(){
 				    $(".myx").css("display","none");
+				    $(".cmeng").css("display","none");
 				});
 				$(".qd_03").on("click",function(){
 				    $(".myx").css("display","none");
@@ -199,7 +202,7 @@
 			</div>
 			<div class="buz_02">
 			    <p>提示</p>
-				<p style="color: red;">资格已用完,请下次再来！</p>
+				<p style="color: red;">资格已用完，请下次再来！</p>
 				<hr style="margin-top: 10px;"/>
 				<p><span class="qd_03">确定</span></p>
 			</div>
